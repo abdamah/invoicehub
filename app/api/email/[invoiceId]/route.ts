@@ -1,8 +1,6 @@
 import prisma from "@/app/utils/db";
-import { formatCurrency, formatDate } from "@/app/utils/formatCurrency";
 import { requireUser } from "@/app/utils/hooks";
 import { emailClient } from "@/app/utils/mailtrap";
-import { notFound } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
 type Params = {
