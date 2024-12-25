@@ -1,18 +1,13 @@
 "use server";
 import { parseWithZod } from "@conform-to/zod";
 
-import { requireUser } from "./utils/hooks";
-import {
-  invoiceSchema,
-  InvoiceType,
-  onboardingSchema,
-} from "./utils/zodSchemas";
-import prisma from "./utils/db";
 import { redirect } from "next/navigation";
-import { emailClient } from "./utils/mailtrap";
+import prisma from "./utils/db";
 import { formatCurrency, formatDate } from "./utils/formatCurrency";
-import { Prisma } from "@prisma/client";
-import exp from "constants";
+import { requireUser } from "./utils/hooks";
+import { emailClient } from "./utils/mailtrap";
+import { invoiceSchema, onboardingSchema } from "./utils/zodSchemas";
+
 export async function onboardUser(prevState: unknown, formData: FormData) {
   const session = await requireUser();
 
@@ -93,7 +88,10 @@ export async function createInvoice(prevState: unknown, formData: FormData) {
         amount: submission.value.total,
         currency: submission.value.currency,
       }),
-      invoiceLink: `http://localhost:3000/api/invoice/${data.id}`,
+      invoiceLink:
+        process.env.NODE_ENV !== "production"
+          ? `http://localhost:3000/api/invoice/${data.id}`
+          : "https://invoicehub-teal.vercel.app/api/invoice/${data.id}",
     },
   });
 
@@ -158,7 +156,10 @@ export async function editInvoice(prevState: any, formData: FormData) {
         amount: submission.value.total,
         currency: submission.value.currency,
       }),
-      invoiceLink: `http://localhost:3000/api/invoice/${data.id}`,
+      invoiceLink:
+        process.env.NODE_ENV !== "production"
+          ? `http://localhost:3000/api/invoice/${data.id}`
+          : "https://invoicehub-teal.vercel.app/api/invoice/${data.id}",
     },
   });
 

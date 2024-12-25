@@ -52,8 +52,8 @@ export async function POST(request: NextRequest, { params }: Params) {
       template_uuid: "08fe0aa4-745f-4dd1-adcc-77ecdeb3392a",
       template_variables: {
         first_name: data.clientName,
-        company_info_name: "abcomp",
-        company_info_address: "street 123",
+        company_info_name: "Invoice Hub",
+        company_info_address: data.clientAddress,
         company_info_city: "Hargeisa",
         company_info_zip_code: "1234",
         company_info_country: "Somaliland",
