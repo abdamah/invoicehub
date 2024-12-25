@@ -29,7 +29,7 @@ export default async function DashboardRoute() {
         title="No invoices found"
         href="/dashboard/invoices/create"
         buttonText="Create Invoice"
-        description="Create an invoice to see it right here."
+        description="Create an invoice to see it right here!"
       />
     );
 
