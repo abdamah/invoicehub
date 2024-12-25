@@ -79,7 +79,11 @@ export default async function InvoiceList() {
 
             <TableCell>
               <Badge
-                className={invoice.status === "PAID" ? "bg-green-500" : ""}
+                className={
+                  invoice.status === "PAID"
+                    ? "bg-green-500 hover:bg-green-400"
+                    : ""
+                }
               >
                 {invoice.status}
               </Badge>

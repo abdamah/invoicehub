@@ -14,7 +14,8 @@ export default function Navbar() {
           Invoie<span className="text-blue-500">Hub</span>
         </h3>
       </Link>
-      <Link href="/login">
+
+      <Link href="/login" className="hidden md:block">
         <RainbowButton>Get Started</RainbowButton>
       </Link>
     </nav>
