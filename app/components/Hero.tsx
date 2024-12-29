@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center py-12 lg:py-20">
       <div className="text-center">
-        <span className="bg-gradient-to-l from-blue-700 via-teal-500 to-green-500 text-transparent text-white font-semibold text-xl px-4 py-2 rounded-full">
+        <span className="bg-gradient-to-l from-blue-700 via-teal-500 to-green-500 text-transparent text-white font-semibold text-sm px-4 py-2 rounded-full">
           Introducing InvoiceHub 1.0
         </span>
         <h1 className="mt-8 text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold">
