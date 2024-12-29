@@ -189,8 +189,8 @@ export default function EditInvoice({ data }: EditInvoiceProps) {
           </div>
 
           {/** Date and Due */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div>
+          <div className="grid grid-cols-2 md:grid-cols-12  gap-4 mb-6">
+            <div className="col-span-6">
               <Label>Date</Label>
 
               <div className="space-y-2">
@@ -221,23 +221,42 @@ export default function EditInvoice({ data }: EditInvoiceProps) {
               </div>
             </div>
 
-            <div>
-              <Label>Invoice Due</Label>
-              <Select
-                name={fields.dueDate.name}
-                key={fields.dueDate.key}
-                defaultValue={data?.dueDate.toString()}
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select due date" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="0">Due on Reciept</SelectItem>
-                  <SelectItem value="15">Net 15</SelectItem>
-                  <SelectItem value="30">Net 30</SelectItem>
-                </SelectContent>
-              </Select>
-              <ErrorMessage message={fields.dueDate.errors} />
+            <div className="col-span-6 grid grid-cols-2 md:grid-cols-12 gap-4">
+              <div className="col-span-6">
+                <Label>Invoice Due</Label>
+                <Select
+                  name={fields.dueDate.name}
+                  key={fields.dueDate.key}
+                  defaultValue={data?.dueDate.toString()}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select due date" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="0">Due on Reciept</SelectItem>
+                    <SelectItem value="15">Net 15</SelectItem>
+                    <SelectItem value="30">Net 30</SelectItem>
+                  </SelectContent>
+                </Select>
+                <ErrorMessage message={fields.dueDate.errors} />
+              </div>
+              <div className="col-span-6">
+                <Label>Status</Label>
+                <Select
+                  name={fields.status.name}
+                  key={fields.status.key}
+                  defaultValue={data?.status}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select Status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="PENDING">PENDING</SelectItem>
+                    <SelectItem value="PAID">PAID</SelectItem>
+                  </SelectContent>
+                </Select>
+                <ErrorMessage message={fields.dueDate.errors} />
+              </div>
             </div>
           </div>
 

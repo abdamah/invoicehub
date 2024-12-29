@@ -3,6 +3,7 @@ import Image from "next/image";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 
 import HeroImage from "@/public/img_hero.png";
+import SubmitButton from "./SubmitButton";
 
 export default function Hero() {
   return (
@@ -28,9 +29,12 @@ export default function Hero() {
           </span>{" "}
           in time.
         </p>
-        <div className="mt-7 mb-1">
+        <div className="mt-7 mb-1 flex items-center justify-center ">
           <Link href="/login">
-            <RainbowButton>Get Unlimted Access</RainbowButton>
+            <SubmitButton
+              text="Get Unlimted Access"
+              className="lg:text-xl lg:font-medium"
+            />
           </Link>
         </div>
       </div>
